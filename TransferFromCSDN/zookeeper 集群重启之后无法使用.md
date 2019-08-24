@@ -79,3 +79,4 @@ JMX enabled by default
 Using config: /usr/local/software/zookeeper/zookeeper/bin/../conf/zoo.cfg
 Mode: follower
 ```
+> 本文章迁移于CSDN[zookeeper 集群重启之后无法使用](https://blog.csdn.net/after95/article/details/68923154)
