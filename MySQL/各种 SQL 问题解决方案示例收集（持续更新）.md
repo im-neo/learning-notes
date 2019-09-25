@@ -18,8 +18,8 @@
         )
 </insert>
 ```
-> DUAL 为临时表，可理解为 MySQL 的固定写法
-> 此示例是结合 Mybatis 的实例
+> - DUAL 为临时表，可理解为 MySQL 的固定写法
+> - 此示例是结合 Mybatis 的实例
 
 ## 查询列名存在于哪些表中
 ```sql
