@@ -1,5 +1,4 @@
-@[TOC](各种 SQL 问题解决方案示例收集（持续更新）)
-
+# 各种 SQL 问题解决方案示例收集
 ## MySQL 插入数据时判断是否存在，若不存在则进行插入操作
 ```sql
 <insert id="insertIfNotExists">
