@@ -38,7 +38,7 @@ AND COLUMN_NAME = 'COLUMN_NAME'
 ```sql
 <update id="batchUpdateUserInfo">
     UPDATE t_user
-    SET user_name = CASE
+    SET user_name = CASE user_id
             <foreach collection="users" item="u">
                 WHEN #{u.userId} THEN #{u.userName}
             </foreach>
@@ -50,7 +50,23 @@ AND COLUMN_NAME = 'COLUMN_NAME'
     )
 </update>
 ```
-> - 此语法也可以同时对多个值修改
+- 语法二
+```sql
+<update id="batchUpdateUserInfo">
+    UPDATE t_user
+    SET user_name = CASE 
+            <foreach collection="users" item="u">
+                WHEN user_id = #{u.userId} THEN #{u.userName}
+            </foreach>
+        END
+    WHERE user_id IN (
+        <foreach collection="users" item="u" separator=",">
+            #{u.userId}
+        </foreach>
+    )
+</update>
+```
+> - 以上两种语法均可同时对多个值修改
 > - 需要注意的是 MySQL 通常会设置 SQL 的长度（可自定义），所以实际生产中需要根据实际情况预估此操作是否有可能会超出 MySQL 的长度限制，如果超出的话需要考虑分多批进行修改
 
 ## 分组排序显示序号
