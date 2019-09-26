@@ -34,10 +34,11 @@ AND COLUMN_NAME = 'COLUMN_NAME'
 ```
 
 ## 根据条件进行批量更新操作
+- 语法一
 ```sql
 <update id="batchUpdateUserInfo">
     UPDATE t_user
-    SET user_name = CASE user_id
+    SET user_name = CASE
             <foreach collection="users" item="u">
                 WHEN #{u.userId} THEN #{u.userName}
             </foreach>
