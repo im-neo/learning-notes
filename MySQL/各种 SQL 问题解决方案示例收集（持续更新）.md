@@ -109,3 +109,26 @@ GROUP BY
 | 201902 | 李四 | 80  | 3 |
 
 > 注意：此语法要求 `month` + `score` 不重复
+
+
+## 临时表
+- 语法
+```sql
+CREATE TEMPORARY TABLE [IF NOT EXISTS] 临时表名
+(
+    ...
+);
+```
+- 示例 - 创建临时表
+```sql
+CREATE TEMPORARY TABLE IF NOT EXISTS temp_user
+(
+    id INT NOT NULL DEFAULT 0,
+    name VARCHAR(10) NOT NULL
+);
+```
+- 示例 - 通过复制表的方式来创建临时表
+```sql
+CREATE TEMPORARY TABLE temp_user
+AS SELECT * FROM tb_user;
+```
