@@ -1758,9 +1758,5 @@ public class BuilderModifyInfoHandleTest {
 ]
 ```
 
-
-
-
-
 ## Github 地址
 [github 完整测试地址](https://github.com/Yu-Hai/spring-boot-template/blob/master/spring-boot-common/src/test/java/BuilderDifferenceInfoHandleTest.java)
