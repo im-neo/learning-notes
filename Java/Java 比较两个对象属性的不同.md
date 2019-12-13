@@ -596,7 +596,7 @@ public class ReflectUtils {
 
 ```
 
-## 创建：`BuilderDifferenceInfoHandle.java`
+## 创建：`BuilderDifferenceInfoHandle.java`核心类
 ```java
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
