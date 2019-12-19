@@ -58,11 +58,20 @@ public class ThreadPoolTest {
             });
         }
 
+        // 监控线程执行情况
         monitor((ThreadPoolExecutor) executorService);
+        // 最后一次数据插入
         addToTemp(null, true);
         System.out.println("结束");
     }
     
+    /**
+     * 添加数据到缓存
+     *
+     * @Author: Neo
+     * @Date: 2019/12/19 21:46
+     * @Version: 1.0
+     */
     public static synchronized void addToTemp(Integer data, boolean focus) {
         if (null != data) {
             TEMP_LIST.add(data);
@@ -82,12 +91,14 @@ public class ThreadPoolTest {
     
     /**
      * 监控线程执行情况
+     * 一直阻塞到线程任务执行完毕
      *
      * @Author: Neo
      * @Date: 2019/12/19 21:09
      * @Version: 1.0
      */
     public static void monitor(ThreadPoolExecutor executor) {
+        
         while (!isTerminated(executor)) {
             try {
                 int queueSize = executor.getQueue().size();
