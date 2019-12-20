@@ -193,7 +193,8 @@ public class DateTypeProcessHandle implements TypeProcessHandle<Date> {
 
 ```java
 import com.alibaba.fastjson.util.TypeUtils;
-import org.apache.commons.lang3.StringUtils;
+
+import java.util.Objects;
 
 
 /**
@@ -206,9 +207,7 @@ import org.apache.commons.lang3.StringUtils;
 public class DefaultTypeProcessHandle implements TypeProcessHandle<Object> {
     @Override
     public boolean isDifferent(Object o1, Object o2) {
-        String n = TypeUtils.castToString(o1);
-        String o = TypeUtils.castToString(o2);
-        return !StringUtils.equals(n, o);
+        return !Objects.equals(o1, o2);
     }
 
     @Override
