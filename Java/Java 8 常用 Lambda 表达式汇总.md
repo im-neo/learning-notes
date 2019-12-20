@@ -82,11 +82,14 @@ BigDecimal totalIncome = list.stream()
         .reduce(BigDecimal.ZERO, BigDecimal::add)
         .setScale(2, BigDecimal.ROUND_HALF_UP);
 
-// 14.单条件排序
+// 14.直接排序
+list.sort(Comparator.comparing(Person::getAge));
+
+// 15.单条件排序
 List<Person> sortList1 = list.stream().sorted(Comparator.comparing(Person::getAge))
         .collect(Collectors.toList());
 
-// 15.多条件排序
+// 16.多条件排序
 List<Person> sortList2 = list.stream().sorted(Comparator.comparing(Person::getAge)
         .thenComparing(Person::getIncome).reversed())
         .collect(Collectors.toList());
