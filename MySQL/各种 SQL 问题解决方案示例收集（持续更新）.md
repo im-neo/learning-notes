@@ -132,3 +132,15 @@ CREATE TEMPORARY TABLE IF NOT EXISTS temp_user
 CREATE TEMPORARY TABLE temp_user
 AS SELECT * FROM tb_user;
 ```
+
+## MySQL 计算列语法
+```sql
+CREATE TABLE `test_cal_column`
+(
+    `num_a` INT(11) ,
+    `num_b` INT(11) ,
+    `num_c` INT(11) GENERATED ALWAYS AS (num_a + num_b) VIRTUAL
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+```
+> MySQL 5.7 及以上版本才支持
