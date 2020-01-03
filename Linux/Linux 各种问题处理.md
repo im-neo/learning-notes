@@ -16,8 +16,11 @@
 > `vim /root/.bashrc`
 
 2. 文件末尾追加
-> `
-> export PS1="[\[\e[32;1m\]\u\e[33;1m@\e[36;1m\h\[\e[0m\] \[\e[31;1m\]\W\[\e[0m\]]\\$ " `
+> `export PS1="[\[\e[32;1m\]\u\e[33;1m@\e[36;1m\h\[\e[0m\] \[\e[31;1m\]\W\[\e[0m\]]\\$ "`
+> 
+> 或
+> 
+> `export PS1="\[\e[32;1m\]\W \e[32;5m\]→ \e[0m\] "`
 
 3. 编译文件
 > source /root/.bashrc
