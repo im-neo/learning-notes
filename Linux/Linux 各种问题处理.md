@@ -24,3 +24,11 @@
 
 3. 编译文件
 > source /root/.bashrc
+
+
+## CentOS7 重启后无法联网
+> ```sh
+> systemctl stop NetworkManager
+> systemctl disable NetworkManager
+> service network restart
+> ```
