@@ -44,3 +44,6 @@ output {
 
 - 如果要根据时间点即默认的`sql_last_value`来同步增量数据却发现时间不对，则需要通过`jdbc_default_timezone =>"Asia/Shanghai"` 处理。
 - 如果全量需要将`sql_last_value`初始化则使用`clean_run => true`
+
+
+官方文档：[https://www.elastic.co/guide/en/logstash/7.5/plugins-inputs-jdbc.html](https://www.elastic.co/guide/en/logstash/7.5/plugins-inputs-jdbc.html)
