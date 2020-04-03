@@ -10,14 +10,12 @@
 ```
 ### yum 安装 MySQL
 ```sh
-rpm -Urho http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm         获取资源
-yum repo list enabled | grep "mysql.*-community.*"   查看当前可用的安装资源
 yum -y install mysql-community-server                使用yum的方式安装MySQL
 systemctl enable mysqld                              加入开机启动
 systemctl start mysqld                               启动MySQL服务进程
 mysql_secure_installation                            重置密码
 mysql -u root -p                                     登录MySQL
-mysql> grant all privileges on *.* to root@"%" identified by "root" with grant option;                                          为root用户授权后才可远程访问
+mysql> grant all privileges on *.* to root@"%" identified by "root" with grant option;          为root用户授权后才可远程访问
 mysql> flush privileges;                             刷新系统权限表
 
 ```
