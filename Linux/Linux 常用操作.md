@@ -21,6 +21,8 @@ mysql> grant all privileges on *.* to root@"%" identified by "root" with grant o
 mysql> flush privileges;                             刷新系统权限表
 
 ```
+> 配置阿里yum源 : [https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.3e221b11KmNBpQ](https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.3e221b11KmNBpQ)
+
 ### 安装Redis并配置服务
 #### 安装
 ```sh
