@@ -19,6 +19,9 @@ mysql> grant all privileges on *.* to root@"%" identified by "root" with grant o
 mysql> flush privileges;                             刷新系统权限表
 
 ```
+> __可参考__：[https://blog.csdn.net/wohiusdashi/article/details/89358071](https://blog.csdn.net/wohiusdashi/article/details/89358071)
+
+
 ### 安装Redis并配置服务
 #### 安装
 ```sh
@@ -123,6 +126,11 @@ export PATH="$PATH:/tools/redis/redis-3.2.6/src/"       在最后行追加
 ```
 > 然后就可以用：redis-cli  命令调用redis
 
+
+### Centos 7配置阿里云yum源
+- 获取阿里云 repo：`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
+- 清理缓存：`yum clean all`
+- 重新加载缓存：`yum makecache`
 
 ## 系统配置
 ### 防火墙端口配置
