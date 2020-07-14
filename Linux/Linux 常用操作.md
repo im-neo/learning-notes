@@ -10,14 +10,12 @@
 ```
 ### yum 安装 MySQL
 ```sh
-rpm -Urho http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm         获取资源
-yum repo list enabled | grep "mysql.*-community.*"   查看当前可用的安装资源
 yum -y install mysql-community-server                使用yum的方式安装MySQL
 systemctl enable mysqld                              加入开机启动
 systemctl start mysqld                               启动MySQL服务进程
 mysql_secure_installation                            重置密码
 mysql -u root -p                                     登录MySQL
-mysql> grant all privileges on *.* to root@"%" identified by "root" with grant option;                                          为root用户授权后才可远程访问
+mysql> grant all privileges on *.* to root@"%" identified by "root" with grant option;          为root用户授权后才可远程访问
 mysql> flush privileges;                             刷新系统权限表
 
 ```
@@ -128,6 +126,11 @@ export PATH="$PATH:/tools/redis/redis-3.2.6/src/"       在最后行追加
 ```
 > 然后就可以用：redis-cli  命令调用redis
 
+
+### Centos 7配置阿里云yum源
+- 获取阿里云 repo：`wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
+- 清理缓存：`yum clean all`
+- 重新加载缓存：`yum makecache`
 
 ## 系统配置
 ### 防火墙端口配置
