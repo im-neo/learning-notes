@@ -172,5 +172,184 @@ OK
 "mysql"
 ```
 
-### 
+
+
+### List(列表)
+
+> 在 Redis 里面，可以把 List 当成：==堆==、==栈==、==阻塞队列==
+>
+> 所有的 List 命令都是以==L==开头
+
+#### LPUSH、RPUSH - 插入
+
+```shell
+127.0.0.1:6379> LPUSH list one			# 将一个或多个值插入到列表的头部（左）
+(integer) 1
+127.0.0.1:6379> LPUSH list two
+(integer) 2
+127.0.0.1:6379> LPUSH list three
+(integer) 3
+127.0.0.1:6379> LRANGE list 0 -1		# 获取List中所有的值
+1) "three"
+2) "two"
+3) "one"
+127.0.0.1:6379> LRANGE list 0 1			# 通过区间获取具体的值
+1) "three"
+2) "two"
+127.0.0.1:6379> RPUSH list zero			# 将一个或多个值插入到列表的尾部（右）
+(integer) 4
+127.0.0.1:6379> LRANGE list 0 -1
+1) "three"
+2) "two"
+3) "one"
+4) "zero"
+
+```
+
+#### LPOP、RPOP - 移除
+
+```shell
+127.0.0.1:6379> LRANGE list 0 -1
+1) "three"
+2) "two"
+3) "one"
+4) "zero"
+127.0.0.1:6379> LPOP list				# 移除列表的第一个元素
+"three"
+127.0.0.1:6379> RPOP list				# 移除列表的最后一个元素
+"zero"
+127.0.0.1:6379> LRANGE list 0 -1
+1) "two"
+2) "one"
+```
+
+#### LINDEX - 通过下标获取列表中的一个值、LLEN - 获取列表的长度
+
+```shell
+127.0.0.1:6379> LRANGE list 0 -1
+1) "two"
+2) "one"
+127.0.0.1:6379> LINDEX list 1			# 通过下标获取列表中的一个值
+"one"
+127.0.0.1:6379> LINDEX list 0
+"two"
+127.0.0.1:6379> LLEN list				# 获取列表的长度
+(integer) 2
+```
+
+#### LREM - 移除列表中指定个数的value，精确匹配
+
+```shell
+127.0.0.1:6379> LPUSH list one
+(integer) 1
+127.0.0.1:6379> LPUSH list two
+(integer) 2
+127.0.0.1:6379> LPUSH list three
+(integer) 3
+127.0.0.1:6379> LPUSH list three
+(integer) 4
+127.0.0.1:6379> LRANGE list 0 -1
+1) "three"
+2) "three"
+3) "two"
+4) "one"
+127.0.0.1:6379> LREM list 1 one			# 移除列表中指定个数的value，精确匹配
+(integer) 1
+127.0.0.1:6379> LREM list 2 three
+(integer) 2
+127.0.0.1:6379> LRANGE list 0 -1
+1) "two"
+```
+
+#### LTRIM - 通过下标截取指定长度的列表
+
+```shell
+127.0.0.1:6379> RPUSH list "hello"
+(integer) 1
+127.0.0.1:6379> RPUSH list "hello1"
+(integer) 2
+127.0.0.1:6379> RPUSH list "hello2"
+(integer) 3
+127.0.0.1:6379> RPUSH list "hello3"
+(integer) 4
+127.0.0.1:6379> LRANGE list 0 -1
+1) "hello"
+2) "hello1"
+3) "hello2"
+4) "hello3"
+127.0.0.1:6379> LTRIM list 1 2			# 通过下标截取指定长度的列表
+OK
+127.0.0.1:6379> LRANGE list 0 -1
+1) "hello1"
+2) "hello2"
+```
+
+#### RPOPLPUSH - 将列表中的最后一个元素移动到新的列表中
+
+```shell
+127.0.0.1:6379> clear
+127.0.0.1:6379> RPUSH list "hello"
+(integer) 1
+127.0.0.1:6379> RPUSH list "hello1"
+(integer) 2
+127.0.0.1:6379> RPUSH list "hello2"
+(integer) 3
+127.0.0.1:6379> RPOPLPUSH list otherlist		# 将列表中的最后一个元素移动到新的列表中
+"hello2"
+127.0.0.1:6379> LRANGE list 0 -1
+1) "hello"
+2) "hello1"
+127.0.0.1:6379> LRANGE otherlist 0 -1
+1) "hello2"
+```
+
+#### LSET - 更新列表中指定下标的值
+
+```shell
+127.0.0.1:6379> EXISTS list				# 判断指定列表是否存在
+(integer) 0
+127.0.0.1:6379> LSET list 0 item		# 如果不存在则更新报错
+(error) ERR no such key
+127.0.0.1:6379> LPUSH list value
+(integer) 1
+127.0.0.1:6379> LRANGE list 0 0
+1) "value"
+127.0.0.1:6379> LSET list 0 item		# 更新列表中指定下标的值
+OK
+127.0.0.1:6379> LRANGE list 0 0
+1) "item"
+127.0.0.1:6379> LSET list 1 other
+(error) ERR index out of range
+```
+
+#### LINSERT - 在列表中指定的元素前后插入值
+
+```shell
+127.0.0.1:6379> LPUSH list hello
+(integer) 1
+127.0.0.1:6379> LPUSH list world
+(integer) 2
+127.0.0.1:6379> LINSERT list before world other		# 在列表中指定的元素前插入值
+(integer) 3
+127.0.0.1:6379> LRANGE list  0 -1
+1) "other"
+2) "world"
+3) "hello"
+127.0.0.1:6379> LINSERT list after hello neo		# 在列表中指定的元素后插入值
+(integer) 4
+127.0.0.1:6379> LRANGE list  0 -1
+1) "other"
+2) "world"
+3) "hello"
+4) "neo"
+```
+
+#### 小结
+
+- list 实际上是一个链表， before 、after，left 、right 都可以插入值
+- 如果 key 不存在，则创建新的链表
+- 如果 key 存在，新增内容
+- 如果移除了所有值，就相当于一个空链表，也代表不存在
+- 在两边插入或者改动值，效率最高，在中间插入元素，效率会比较低
+- 消息队列（`Lpush`/ `Rpop`）,栈（`Lpush `/ `Lpop`）
 
