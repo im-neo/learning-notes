@@ -134,9 +134,22 @@ export PATH="$PATH:/tools/redis/redis-3.2.6/src/"       在最后行追加
 
 ## 系统配置
 ### 防火墙端口配置
-```sh
-netstat -tln                                                    查看端口开放情况
-/sbin/iptables -I INPUT -p tcp --dport 6379  -j ACCEPT          设置端口开放
-/etc/rc.d/init.d/iptables save                                  保存修改
-/etc/init.d/iptables restart                                    重启防火墙
+```shell
+firewall-cmd --zone=public --add-port=5672/tcp --permanent   # 开放5672端口
+
+firewall-cmd --zone=public --remove-port=5672/tcp --permanent  #关闭5672端口
+
+firewall-cmd --reload   # 配置立即生效
+
+firewall-cmd --zone=public --list-ports     # 查看防火墙所有开放的端口
+
+systemctl start firewall        # 开启防火墙
+
+systemctl stop firewalld        # 关闭防火墙
+
+firewall-cmd --state        # 查看防火墙状态
+
+netstat -lnpt       # 查看监听的端口
+
+netstat -lnpt | grep 5672        # 检查端口被哪个进程占用
 ```
