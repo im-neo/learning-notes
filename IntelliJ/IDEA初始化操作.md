@@ -35,4 +35,24 @@
 - Mybatis Log - 打印MyBatis日志并自动拼接参数
 - RestfulTookit - Controller 请求映射，快捷键：Ctrl + Alt + N
 - Lombok - Lombok 编译插件
-- 
+
+## VM Options
+
+```
+-Xms1024m
+-Xmx2048m
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-ea
+-XX:CICompilerCount=2
+-Djdk.http.auth.tunneling.disabledSchemes=""
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-Djdk.attach.allowAttachSelf=true
+-Dkotlinx.coroutines.debug=off
+-Djdk.module.illegalAccess.silent=true
+-Dide.no.platform.update=true
+-Dsun.io.useCanonCaches=false
+-XX:ReservedCodeCacheSize=512m
+```
+
