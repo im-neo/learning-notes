@@ -51,6 +51,15 @@ Map<String, List<Person>> collect1 = list.stream().collect(Collectors.groupingBy
     }
 }));
 
+// 根据性别分组
+Map<String, List<String>> mapping = items.stream()
+                .collect(Collectors.groupingBy(Person::getGender))
+                .entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry ->
+                        entry.getValue().stream()
+                                .map(Person::getName)
+                                .collect(Collectors.toList())
+                ));
+
 // 多级分组
 Map<String, Map<String, List<Person>>> collect2 = list.stream().collect(Collectors.groupingBy(p -> {
     if (p.getAge() >= 30) {
