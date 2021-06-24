@@ -63,9 +63,9 @@
 
   ![image-20210624103939377](images/image-20210624103939377.png)
 
-- 将 `config/log4j.properties` 复制到 `core\src\main\scala` 目录下
+- 将 `config/log4j.properties` 复制到 `core/src/main/resources` 目录下，`resources`需自行创建
 
-  ![image-20210624104349520](images/image-20210624104349520.png)
+  ![image-20210624135930556](images/image-20210624135930556.png)
 
 - 修改 `config/server.properties`文件中的 `log.dirs`
 
