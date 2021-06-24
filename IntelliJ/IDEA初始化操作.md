@@ -12,17 +12,17 @@
 
 ![image-20201209150658909](images/image-20201209150658909.png)
 
-
-
 ## Font
 
 ![image-20201209152010881](images/image-20201209152010881.png)
 
-
-
 ## Theme
 
 ![image-20201209152043399](images/image-20201209152043399.png)
+
+## Editor Tabs
+
+![image-20210624094633054](images/image-20210624094633054.png)
 
 ## Plug-in
 
