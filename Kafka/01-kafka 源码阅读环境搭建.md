@@ -6,7 +6,7 @@
 
 - `jdk 1.8` 自行下载并配置
 - `zookeeper-3.4.9` : https://archive.apache.org/dist/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz
-- `scala-2.10.6` : https://downloads.gradle-dn.com/distributions/gradle-3.1-bin.zip
+- `scala-2.10.6` : https://downloads.lightbend.com/scala/2.10.6/scala.msi
 - `gradle-3.1` : https://downloads.gradle-dn.com/distributions/gradle-3.1-bin.zip
 - 配置 Jdk、Scala 、Gradle 环境变量并验证是否配置成功
 
