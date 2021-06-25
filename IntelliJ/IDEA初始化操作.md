@@ -2,25 +2,40 @@
 
 ## Maven
 
-![image-20201209150256343](images/image-20201209150256343.png)
+![image-20210625213821904](images/image-20210625213821904.png)
 
-## Encodings
+**`setting.xml` 配置阿里云镜像**
+
+```xml
+<mirror>
+	<id>nexus-aliyun</id>
+  <mirrorOf>central</mirrorOf>
+	<name>Nexus aliyun</name>
+	<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+</mirror>
+```
+
+![image-20210625212316016](images/image-20210625212316016.png)
+
+
+
+## Encodings - 编码
 
 ![image-20201209150419802](images/image-20201209150419802.png)
 
-## Indent
+## Indent - 缩进
 
 ![image-20201209150658909](images/image-20201209150658909.png)
 
-## Font
+## Font - 字体
 
 ![image-20201209152010881](images/image-20201209152010881.png)
 
-## Theme
+## Theme - 暗黑模式
 
 ![image-20201209152043399](images/image-20201209152043399.png)
 
-## Editor Tabs
+## Editor Tabs - 靠右展示编辑窗口标签
 
 ![image-20210624094633054](images/image-20210624094633054.png)
 
@@ -28,7 +43,39 @@
 
 ![image-20210625145003196](images/image-20210625145003196.png)
 
-## Plug-in
+
+
+## Live Template - 注释模板
+
+- 创建 `Template Group`，自定义 Group 名称
+
+![image-20210625215302007](images/image-20210625215302007.png)
+
+- 在创建的 Group 里面创建 `Live Template`
+
+  - Class
+
+    ```
+    /**
+     * 
+     * @author Neo
+     * @since $date$ $time$
+     * @version 1.0
+     */
+    ```
+
+  - Method
+
+    ```
+    /**
+     * 
+     *
+     * @author Neo
+     * @since $date$ $time$
+     */
+    ```
+
+## Plugins - 插件
 
 - Translation - 翻译
 - .ignore - git
@@ -43,7 +90,7 @@
 - String Manipulation- 字符串处理
 - SequenceDiagram - 方法调用时序图
 
-## VM Options
+## VM Options - 参数
 
 ```
 -Xms1024m
