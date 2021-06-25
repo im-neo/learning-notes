@@ -5,21 +5,14 @@
 ```xml
 <dependency>
     <groupId>org.apache.kafka</groupId>
-    <artifactId>kafka_2.12</artifactId>
-    <version>1.0.0</version>
-    <scope>provided</scope>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.kafka</groupId>
     <artifactId>kafka-clients</artifactId>
-    <version>1.0.0</version>
+    <version>0.10.0.1</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.kafka</groupId>
     <artifactId>kafka-streams</artifactId>
-    <version>1.0.0</version>
+    <version>0.10.0.1</version>
 </dependency>
 ```
 

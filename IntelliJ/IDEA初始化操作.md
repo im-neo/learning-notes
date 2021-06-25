@@ -24,6 +24,10 @@
 
 ![image-20210624094633054](images/image-20210624094633054.png)
 
+## Code Completion - 智能提示忽略大小写
+
+![image-20210625145003196](images/image-20210625145003196.png)
+
 ## Plug-in
 
 - Translation - 翻译
