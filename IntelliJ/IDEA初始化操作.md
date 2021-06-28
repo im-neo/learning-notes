@@ -75,6 +75,10 @@
      */
     ```
 
+## System Setting - 默认不打开项目
+
+![image-20210628082708516](images/image-20210628082708516.png)
+
 ## Plugins - 插件
 
 - Translation - 翻译
