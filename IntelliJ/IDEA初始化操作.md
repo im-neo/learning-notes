@@ -79,6 +79,12 @@
 
 ![image-20210628082708516](images/image-20210628082708516.png)
 
+## Inspections - 序列化提示
+
+![image-20210701194801837](images/image-20210701194801837.png)
+
+
+
 ## Plugins - 插件
 
 - Translation - 翻译
