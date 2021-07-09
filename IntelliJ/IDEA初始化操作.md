@@ -79,6 +79,15 @@
 
 ![image-20210628082708516](images/image-20210628082708516.png)
 
+
+
+## Auto Import - 导包优化
+
+![image-20210628135742704](images/image-20210628135742704.png)
+
+> - Add unambiguous imports on the fly：快速添加明确的导入
+> - Optimize imports on the fly：自动帮助删除无用的导入
+
 ## Plugins - 插件
 
 - Translation - 翻译
