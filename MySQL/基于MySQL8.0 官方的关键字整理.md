@@ -7,7 +7,7 @@
 >
 > 参考的官方地址：https://dev.mysql.com/doc/refman/8.0/en/keywords.html
 >
-> 另整理了一份关键字的数据库脚本：
+> 另整理了一份关键字的数据库脚本：https://download.csdn.net/download/after95/20097607
 
 **附上关键字检查SQL**
 

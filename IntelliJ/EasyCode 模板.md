@@ -52,7 +52,7 @@ public class $!{tableInfo.name} implements Serializable {
 ```
 
 ## mapper.xml
-```
+```velocity
 ##引入mybatis支持
 $!mybatisSupport
 
@@ -111,7 +111,7 @@ $!callback.setSavePath($tool.append($modulePath, "/src/main/resources/mapper"))
 ```
 
 ## mapper.java
-```
+```velocity
 ##定义初始变量
 #set($tableName = $tool.append($tableInfo.name, "Mapper"))
 ##设置回调
@@ -140,7 +140,7 @@ public interface $!{tableName} extends BaseMapper<$!{tableInfo.name}>{
 ```
 
 ## service.java
-```
+```velocity
 ##定义初始变量
 #set($tableName = $tool.append($tableInfo.name, "Service"))
 ##设置回调
@@ -169,7 +169,7 @@ public interface I$!{tableName} extends IService<$!{tableInfo.name}>{
 ```
 
 ## serviceimpl.java
-```
+```velocity
 ##定义初始变量
 #set($tableName = $tool.append($tableInfo.name, "ServiceImpl"))
 ##设置回调
@@ -201,7 +201,7 @@ public class $!{tableName} extends ServiceImpl<$!{tableInfo.name}Mapper, $!{tabl
 
 
 ## controller.java
-```
+```velocity
 ##定义初始变量
 #set($tableName = $tool.append($tableInfo.name, "Controller"))
 ##设置回调

@@ -90,6 +90,12 @@
 
 ![image-20210701194801837](images/image-20210701194801837.png)
 
+
+
+## 自动导包去除星号（import xxx.*）
+
+![image-20210909150957736](images/image-20210909150957736.png)
+
 ## Plugins - 插件
 
 - Translation - 翻译
