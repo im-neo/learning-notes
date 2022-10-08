@@ -110,6 +110,7 @@
 - Codota - 代码智能提示
 - String Manipulation- 字符串处理
 - SequenceDiagram - 方法调用时序图
+- Rainbow Brackets - 彩虹括号
 
 ## VM Options - 参数
 
